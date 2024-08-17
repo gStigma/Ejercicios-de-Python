@@ -4,7 +4,7 @@ def invertir_cadena(cadena):
     for i in range(len(cadena)):
         v = cadena[len(cadena)-i-1:len(cadena)-i]
         new_cadena += str(v)
-    print(str(new_cadena))
+    print(f"Tu nueva cadena es: {new_cadena}")
 
 def run():
     cadena = input("Introduce la cadena a intercambiar: ")
