@@ -1,27 +1,19 @@
 
 def redondear(cantidad, decimales):
-    cantidad_list = str(cantidad)
-    cantidad_entera = int(cantidad)
-    cantidad_decimal = '0.'
-    j = 0
-    dec = False
-    for i in cantidad_list:
-        if i == '.':
-            dec = True
-        elif j < decimales and dec:   
-            cantidad_decimal = i + cantidad_decimal
-
-    cantidad_entera = float(cantidad_entera) + float(cantidad_decimal)
-            
-    return cantidad_entera
-        
-
-    
+    cantidad_entera = ''
+    for i in range(len(cantidad)):
+        if cantidad[i] == '.':
+            cantidad_entera =  cantidad_entera + cantidad[i:i+decimales+1]
+            break
+        else:
+            cantidad_entera += cantidad[i]
+    return float(cantidad_entera)
+           
 
 def run():
-    cantidad = float(input("Ingrese la cantidad: "))
-    decimales = int(input("Ingrese la cantidad de decimales: "))
-    print(f"La cantidad con los decimales es: {redondear(cantidad,decimales)} ")
+    cantidad = input("Ingrese la cantidad: ")
+    decimales = input("Ingrese la cantidad de decimales: ")
+    print(f"La cantidad con los decimales es: {redondear(cantidad,int(decimales))} ")
 
 
 if __name__ == '__main__':
