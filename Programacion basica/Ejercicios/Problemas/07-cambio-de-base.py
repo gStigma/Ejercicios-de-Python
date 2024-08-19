@@ -22,8 +22,7 @@ def run():
         print("El número debe ser entero positivo.")
         return
         
-    resultado = cambiar_base(n, b)
-    print(f"La representación de {n} en base {b} es {resultado}.")
+    print(f"La representación de {n} en base {b} es {cambiar_base(n, b)}.")
 
 if __name__ == '__main__':
     run()
